@@ -1,0 +1,34 @@
+container > row > col-xs-12 {
+  height: 100%;
+}
+
+#totalTrips {
+  width: 8em;
+  text-align: right;
+}
+
+.pull-right {
+  padding-left: 2em;
+}
+
+.panel-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  max-width: 30%;
+  progress {
+    width: 100%;
+  }
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+}
+.map-canvas { 
+  height: 100%;
+  width: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;  
+  }

@@ -1,0 +1,7 @@
+{
+  "WEB_SERVER_PORT": 3000,
+  "SOCKET_PORT": 3001,
+  "RUN_MODE": "prd",
+  "LOG_LOCATION": "../logs/app.log",
+  "MongoURL": "mongodb://localhost/Anaximander"
+}

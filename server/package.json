@@ -1,0 +1,33 @@
+{
+  "name": "Anaximander",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "async": "~1.5.2",
+    "atob": "~2.0.0",
+    "body-parser": "~1.14.2",
+    "compression": "^1.6.1",
+    "config": "~1.19.0",
+    "cors": "~2.7.1",
+    "express": "~4.13.4",
+    "helmet": "~1.1.0",
+    "jsonminify": "^0.4.1",
+    "jsonwebtoken": "~5.5.4",
+    "mongoose": "^4.4.7",
+    "morgan": "~1.6.1",
+    "serve-static": "~1.10.2",
+    "socket.io": "^1.4.6",
+    "superagent": "~1.7.2",
+    "underscore": "~1.8.3",
+    "winston": "~2.1.1"
+  },
+  "devDependencies": {
+    "btoa": "~1.1.2"
+  },
+  "author": "alex sherbuck"
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Anaximander",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/app.js",
+  "author": "Alex Sherbuck",
+  "devDependencies": {
+    "del": "~2.2.0",
+    "gulp": "~3.9.0",
+    "gulp-concat": "~2.6.0",
+    "gulp-html-replace": "^1.5.5",
+    "gulp-jshint": "^2.0.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-open": "~1.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.1",
+    "gulp-uglify": "^1.5.1",
+    "gulp-watch": "^4.3.5",
+    "jasmine": "^2.4.1",
+    "jasmine-core": "~2.4.1",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^0.2.3",
+    "karma-html-reporter": "^0.2.7",
+    "karma-jasmine": "^0.3.8",
+    "karma-requirejs": "^0.2.6"
+  },
+  "dependencies": {
+    "angular": "~1.5.0",
+    "angular-animate": "~1.5.0",
+    "angular-aria": "~1.5.0",
+    "angular-material": "~1.0.5",
+    "angular-messages": "~1.5.0",
+    "jshint": "^2.9.1"
+  }
+}

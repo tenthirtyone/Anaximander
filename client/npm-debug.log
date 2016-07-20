@@ -1,0 +1,697 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'bower',
+1 verbose cli   'gulp',
+1 verbose cli   'gulp-cli',
+1 verbose cli   'nodemon' ]
+2 info using npm@1.3.10
+3 info using node@v0.10.25
+4 verbose cache add [ 'bower', null ]
+5 verbose cache add name=undefined spec="bower" args=["bower",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'bower',
+6 verbose parsed url   path: 'bower',
+6 verbose parsed url   href: 'bower' }
+7 verbose cache add [ 'gulp', null ]
+8 verbose cache add name=undefined spec="gulp" args=["gulp",null]
+9 verbose parsed url { protocol: null,
+9 verbose parsed url   slashes: null,
+9 verbose parsed url   auth: null,
+9 verbose parsed url   host: null,
+9 verbose parsed url   port: null,
+9 verbose parsed url   hostname: null,
+9 verbose parsed url   hash: null,
+9 verbose parsed url   search: null,
+9 verbose parsed url   query: null,
+9 verbose parsed url   pathname: 'gulp',
+9 verbose parsed url   path: 'gulp',
+9 verbose parsed url   href: 'gulp' }
+10 verbose cache add [ 'gulp-cli', null ]
+11 verbose cache add name=undefined spec="gulp-cli" args=["gulp-cli",null]
+12 verbose parsed url { protocol: null,
+12 verbose parsed url   slashes: null,
+12 verbose parsed url   auth: null,
+12 verbose parsed url   host: null,
+12 verbose parsed url   port: null,
+12 verbose parsed url   hostname: null,
+12 verbose parsed url   hash: null,
+12 verbose parsed url   search: null,
+12 verbose parsed url   query: null,
+12 verbose parsed url   pathname: 'gulp-cli',
+12 verbose parsed url   path: 'gulp-cli',
+12 verbose parsed url   href: 'gulp-cli' }
+13 verbose cache add [ 'nodemon', null ]
+14 verbose cache add name=undefined spec="nodemon" args=["nodemon",null]
+15 verbose parsed url { protocol: null,
+15 verbose parsed url   slashes: null,
+15 verbose parsed url   auth: null,
+15 verbose parsed url   host: null,
+15 verbose parsed url   port: null,
+15 verbose parsed url   hostname: null,
+15 verbose parsed url   hash: null,
+15 verbose parsed url   search: null,
+15 verbose parsed url   query: null,
+15 verbose parsed url   pathname: 'nodemon',
+15 verbose parsed url   path: 'nodemon',
+15 verbose parsed url   href: 'nodemon' }
+16 silly lockFile 206e3ce5-bower bower
+17 verbose lock bower /home/hayek/.npm/206e3ce5-bower.lock
+18 silly lockFile 9750c68d-gulp gulp
+19 verbose lock gulp /home/hayek/.npm/9750c68d-gulp.lock
+20 silly lockFile e23a8be8-gulp-cli gulp-cli
+21 verbose lock gulp-cli /home/hayek/.npm/e23a8be8-gulp-cli.lock
+22 silly lockFile 1625b929-nodemon nodemon
+23 verbose lock nodemon /home/hayek/.npm/1625b929-nodemon.lock
+24 silly lockFile 206e3ce5-bower bower
+25 silly lockFile 206e3ce5-bower bower
+26 silly lockFile e23a8be8-gulp-cli gulp-cli
+27 silly lockFile e23a8be8-gulp-cli gulp-cli
+28 silly lockFile 1625b929-nodemon nodemon
+29 silly lockFile 1625b929-nodemon nodemon
+30 silly lockFile 9750c68d-gulp gulp
+31 silly lockFile 9750c68d-gulp gulp
+32 verbose addNamed [ 'bower', '' ]
+33 verbose addNamed [ null, '*' ]
+34 silly lockFile 1240aab1-bower bower@
+35 verbose lock bower@ /home/hayek/.npm/1240aab1-bower.lock
+36 verbose addNamed [ 'gulp-cli', '' ]
+37 verbose addNamed [ null, '*' ]
+38 silly lockFile dd34a9c8-gulp-cli gulp-cli@
+39 verbose lock gulp-cli@ /home/hayek/.npm/dd34a9c8-gulp-cli.lock
+40 verbose addNamed [ 'nodemon', '' ]
+41 verbose addNamed [ null, '*' ]
+42 silly lockFile 4f5e51c6-nodemon nodemon@
+43 verbose lock nodemon@ /home/hayek/.npm/4f5e51c6-nodemon.lock
+44 verbose addNamed [ 'gulp', '' ]
+45 verbose addNamed [ null, '*' ]
+46 silly lockFile 72f4391e-gulp gulp@
+47 verbose lock gulp@ /home/hayek/.npm/72f4391e-gulp.lock
+48 silly addNameRange { name: 'gulp-cli', range: '*', hasData: false }
+49 silly addNameRange { name: 'nodemon', range: '*', hasData: false }
+50 silly addNameRange { name: 'bower', range: '*', hasData: false }
+51 silly addNameRange { name: 'gulp', range: '*', hasData: false }
+52 verbose registry.get gulp-cli not expired, no request
+53 silly addNameRange number 2 { name: 'gulp-cli', range: '*', hasData: true }
+54 silly addNameRange versions [ 'gulp-cli',
+54 silly addNameRange   [ '0.1.0',
+54 silly addNameRange     '0.1.3',
+54 silly addNameRange     '0.1.4',
+54 silly addNameRange     '0.1.5',
+54 silly addNameRange     '0.2.0',
+54 silly addNameRange     '0.3.0',
+54 silly addNameRange     '1.0.0',
+54 silly addNameRange     '1.1.0',
+54 silly addNameRange     '1.1.1',
+54 silly addNameRange     '1.2.0',
+54 silly addNameRange     '1.2.1' ] ]
+55 verbose addNamed [ 'gulp-cli', '1.2.1' ]
+56 verbose addNamed [ '1.2.1', '1.2.1' ]
+57 silly lockFile df40f7fc-gulp-cli-1-2-1 gulp-cli@1.2.1
+58 verbose lock gulp-cli@1.2.1 /home/hayek/.npm/df40f7fc-gulp-cli-1-2-1.lock
+59 verbose url raw nodemon
+60 verbose url resolving [ 'https://registry.npmjs.org/', './nodemon' ]
+61 verbose url resolved https://registry.npmjs.org/nodemon
+62 info trying registry request attempt 1 at 20:48:42
+63 verbose etag "A0PIBM36NFZN29DUN43F1OOEV"
+64 http GET https://registry.npmjs.org/nodemon
+65 verbose registry.get bower not expired, no request
+66 silly addNameRange number 2 { name: 'bower', range: '*', hasData: true }
+67 silly addNameRange versions [ 'bower',
+67 silly addNameRange   [ '0.1.0',
+67 silly addNameRange     '0.1.2',
+67 silly addNameRange     '0.1.3',
+67 silly addNameRange     '0.2.0',
+67 silly addNameRange     '0.3.0',
+67 silly addNameRange     '0.3.1',
+67 silly addNameRange     '0.3.2',
+67 silly addNameRange     '0.4.0',
+67 silly addNameRange     '0.5.0',
+67 silly addNameRange     '0.5.1',
+67 silly addNameRange     '0.6.0',
+67 silly addNameRange     '0.6.1',
+67 silly addNameRange     '0.6.2',
+67 silly addNameRange     '0.6.3',
+67 silly addNameRange     '0.6.4',
+67 silly addNameRange     '0.6.5',
+67 silly addNameRange     '0.6.6',
+67 silly addNameRange     '0.6.7',
+67 silly addNameRange     '0.6.8',
+67 silly addNameRange     '0.7.0',
+67 silly addNameRange     '0.7.1',
+67 silly addNameRange     '0.8.0',
+67 silly addNameRange     '0.8.1',
+67 silly addNameRange     '0.8.2',
+67 silly addNameRange     '0.8.3',
+67 silly addNameRange     '0.8.4',
+67 silly addNameRange     '0.8.5',
+67 silly addNameRange     '0.8.6',
+67 silly addNameRange     '0.9.0',
+67 silly addNameRange     '0.9.1',
+67 silly addNameRange     '0.9.2',
+67 silly addNameRange     '0.10.0',
+67 silly addNameRange     '1.0.0',
+67 silly addNameRange     '1.0.1',
+67 silly addNameRange     '1.0.2',
+67 silly addNameRange     '1.0.3',
+67 silly addNameRange     '1.1.0',
+67 silly addNameRange     '1.1.1',
+67 silly addNameRange     '1.1.2',
+67 silly addNameRange     '1.2.0',
+67 silly addNameRange     '1.2.1',
+67 silly addNameRange     '1.2.2',
+67 silly addNameRange     '1.2.3',
+67 silly addNameRange     '1.2.4',
+67 silly addNameRange     '1.2.5',
+67 silly addNameRange     '1.2.6',
+67 silly addNameRange     '1.2.7',
+67 silly addNameRange     '1.2.8',
+67 silly addNameRange     '1.3.0',
+67 silly addNameRange     '1.3.1',
+67 silly addNameRange     '1.3.2',
+67 silly addNameRange     '1.3.3',
+67 silly addNameRange     '1.3.4',
+67 silly addNameRange     '1.3.5',
+67 silly addNameRange     '1.3.6',
+67 silly addNameRange     '1.3.7',
+67 silly addNameRange     '1.3.8',
+67 silly addNameRange     '1.3.9',
+67 silly addNameRange     '1.3.10',
+67 silly addNameRange     '1.3.11',
+67 silly addNameRange     '1.3.12',
+67 silly addNameRange     '1.4.0',
+67 silly addNameRange     '1.4.1',
+67 silly addNameRange     '1.5.0',
+67 silly addNameRange     '1.5.1',
+67 silly addNameRange     '1.5.2',
+67 silly addNameRange     '1.5.3',
+67 silly addNameRange     '1.6.2',
+67 silly addNameRange     '1.6.3',
+67 silly addNameRange     '1.6.4',
+67 silly addNameRange     '1.6.5',
+67 silly addNameRange     '1.5.4',
+67 silly addNameRange     '1.4.2',
+67 silly addNameRange     '1.6.6',
+67 silly addNameRange     '1.6.7',
+67 silly addNameRange     '1.6.8',
+67 silly addNameRange     '1.6.9',
+67 silly addNameRange     '1.7.0',
+67 silly addNameRange     '1.7.1',
+67 silly addNameRange     '1.7.2',
+67 silly addNameRange     '1.7.5',
+67 silly addNameRange     '1.7.6',
+67 silly addNameRange     '1.7.7',
+67 silly addNameRange     '1.7.8',
+67 silly addNameRange     '1.7.9' ] ]
+68 verbose addNamed [ 'bower', '1.7.9' ]
+69 verbose addNamed [ '1.7.9', '1.7.9' ]
+70 silly lockFile c07be986-bower-1-7-9 bower@1.7.9
+71 verbose lock bower@1.7.9 /home/hayek/.npm/c07be986-bower-1-7-9.lock
+72 verbose registry.get gulp not expired, no request
+73 silly addNameRange number 2 { name: 'gulp', range: '*', hasData: true }
+74 silly addNameRange versions [ 'gulp',
+74 silly addNameRange   [ '0.0.1',
+74 silly addNameRange     '0.0.2',
+74 silly addNameRange     '0.0.3',
+74 silly addNameRange     '0.0.4',
+74 silly addNameRange     '0.0.5',
+74 silly addNameRange     '0.0.7',
+74 silly addNameRange     '0.0.8',
+74 silly addNameRange     '0.0.9',
+74 silly addNameRange     '0.1.0',
+74 silly addNameRange     '0.2.0',
+74 silly addNameRange     '1.0.0',
+74 silly addNameRange     '1.1.0',
+74 silly addNameRange     '1.2.0',
+74 silly addNameRange     '1.2.1',
+74 silly addNameRange     '2.0.0',
+74 silly addNameRange     '2.0.1',
+74 silly addNameRange     '2.1.0',
+74 silly addNameRange     '2.2.0',
+74 silly addNameRange     '2.3.0',
+74 silly addNameRange     '2.4.0',
+74 silly addNameRange     '2.4.1',
+74 silly addNameRange     '2.6.0',
+74 silly addNameRange     '2.6.1',
+74 silly addNameRange     '2.7.0',
+74 silly addNameRange     '3.0.0',
+74 silly addNameRange     '3.1.1',
+74 silly addNameRange     '3.1.2',
+74 silly addNameRange     '3.1.3',
+74 silly addNameRange     '3.1.4',
+74 silly addNameRange     '3.2.0',
+74 silly addNameRange     '3.2.1',
+74 silly addNameRange     '3.2.2',
+74 silly addNameRange     '3.2.3',
+74 silly addNameRange     '3.2.4',
+74 silly addNameRange     '3.2.5',
+74 silly addNameRange     '3.3.0',
+74 silly addNameRange     '3.3.1',
+74 silly addNameRange     '3.3.2',
+74 silly addNameRange     '3.3.4',
+74 silly addNameRange     '3.4.0',
+74 silly addNameRange     '3.5.0',
+74 silly addNameRange     '3.5.1',
+74 silly addNameRange     '3.5.2',
+74 silly addNameRange     '3.5.5',
+74 silly addNameRange     '3.5.6',
+74 silly addNameRange     '3.6.0',
+74 silly addNameRange     '3.6.1',
+74 silly addNameRange     '3.6.2',
+74 silly addNameRange     '3.7.0',
+74 silly addNameRange     '3.8.0',
+74 silly addNameRange     '3.8.1',
+74 silly addNameRange     '3.8.2',
+74 silly addNameRange     '3.8.3',
+74 silly addNameRange     '3.8.4',
+74 silly addNameRange     '3.8.5',
+74 silly addNameRange     '3.8.6',
+74 silly addNameRange     '3.8.7',
+74 silly addNameRange     '3.8.8',
+74 silly addNameRange     '3.8.9',
+74 silly addNameRange     '3.8.10',
+74 silly addNameRange     '3.8.11',
+74 silly addNameRange     '3.9.0',
+74 silly addNameRange     '3.9.1' ] ]
+75 verbose addNamed [ 'gulp', '3.9.1' ]
+76 verbose addNamed [ '3.9.1', '3.9.1' ]
+77 silly lockFile d9f1ef79-gulp-3-9-1 gulp@3.9.1
+78 verbose lock gulp@3.9.1 /home/hayek/.npm/d9f1ef79-gulp-3-9-1.lock
+79 silly lockFile df40f7fc-gulp-cli-1-2-1 gulp-cli@1.2.1
+80 silly lockFile df40f7fc-gulp-cli-1-2-1 gulp-cli@1.2.1
+81 silly lockFile c07be986-bower-1-7-9 bower@1.7.9
+82 silly lockFile c07be986-bower-1-7-9 bower@1.7.9
+83 silly lockFile d9f1ef79-gulp-3-9-1 gulp@3.9.1
+84 silly lockFile d9f1ef79-gulp-3-9-1 gulp@3.9.1
+85 silly lockFile dd34a9c8-gulp-cli gulp-cli@
+86 silly lockFile dd34a9c8-gulp-cli gulp-cli@
+87 silly lockFile 1240aab1-bower bower@
+88 silly lockFile 1240aab1-bower bower@
+89 silly lockFile 72f4391e-gulp gulp@
+90 silly lockFile 72f4391e-gulp gulp@
+91 http 304 https://registry.npmjs.org/nodemon
+92 silly registry.get cb [ 304,
+92 silly registry.get   { date: 'Thu, 07 Jul 2016 00:48:42 GMT',
+92 silly registry.get     via: '1.1 varnish',
+92 silly registry.get     'cache-control': 'max-age=300',
+92 silly registry.get     etag: '"A0PIBM36NFZN29DUN43F1OOEV"',
+92 silly registry.get     age: '162',
+92 silly registry.get     connection: 'keep-alive',
+92 silly registry.get     'x-served-by': 'cache-iad2122-IAD',
+92 silly registry.get     'x-cache': 'HIT',
+92 silly registry.get     'x-cache-hits': '1',
+92 silly registry.get     'x-timer': 'S1467852522.952418,VS0,VE0',
+92 silly registry.get     vary: 'Accept-Encoding' } ]
+93 verbose etag nodemon from cache
+94 silly addNameRange number 2 { name: 'nodemon', range: '*', hasData: true }
+95 silly addNameRange versions [ 'nodemon',
+95 silly addNameRange   [ '0.1.4',
+95 silly addNameRange     '0.1.5',
+95 silly addNameRange     '0.1.6',
+95 silly addNameRange     '0.1.7',
+95 silly addNameRange     '0.1.8',
+95 silly addNameRange     '0.2.0',
+95 silly addNameRange     '0.2.1',
+95 silly addNameRange     '0.2.2',
+95 silly addNameRange     '0.3.0',
+95 silly addNameRange     '0.3.1',
+95 silly addNameRange     '0.3.2',
+95 silly addNameRange     '0.4.0',
+95 silly addNameRange     '0.4.1',
+95 silly addNameRange     '0.5.0',
+95 silly addNameRange     '0.5.1',
+95 silly addNameRange     '0.5.2',
+95 silly addNameRange     '0.5.3',
+95 silly addNameRange     '0.5.4',
+95 silly addNameRange     '0.5.5',
+95 silly addNameRange     '0.5.6',
+95 silly addNameRange     '0.5.7',
+95 silly addNameRange     '0.6.0',
+95 silly addNameRange     '0.6.1',
+95 silly addNameRange     '0.6.2',
+95 silly addNameRange     '0.6.3',
+95 silly addNameRange     '0.6.4',
+95 silly addNameRange     '0.6.5',
+95 silly addNameRange     '0.6.6',
+95 silly addNameRange     '0.6.7',
+95 silly addNameRange     '0.6.8',
+95 silly addNameRange     '0.6.9',
+95 silly addNameRange     '0.6.10',
+95 silly addNameRange     '0.6.11',
+95 silly addNameRange     '0.6.12',
+95 silly addNameRange     '0.6.13',
+95 silly addNameRange     '0.6.14',
+95 silly addNameRange     '0.6.15',
+95 silly addNameRange     '0.6.16',
+95 silly addNameRange     '0.6.17',
+95 silly addNameRange     '0.6.18',
+95 silly addNameRange     '0.6.19',
+95 silly addNameRange     '0.6.20',
+95 silly addNameRange     '0.6.21',
+95 silly addNameRange     '0.6.22',
+95 silly addNameRange     '0.6.23',
+95 silly addNameRange     '0.7.0',
+95 silly addNameRange     '0.7.1',
+95 silly addNameRange     '0.7.2',
+95 silly addNameRange     '0.7.3',
+95 silly addNameRange     '0.7.4',
+95 silly addNameRange     '0.7.5',
+95 silly addNameRange     '0.7.6',
+95 silly addNameRange     '0.7.7',
+95 silly addNameRange     '0.7.8',
+95 silly addNameRange     '0.7.10',
+95 silly addNameRange     '0.9.0',
+95 silly addNameRange     '0.9.1',
+95 silly addNameRange     '0.9.2',
+95 silly addNameRange     '0.9.3',
+95 silly addNameRange     '0.9.5',
+95 silly addNameRange     '0.9.6',
+95 silly addNameRange     '0.9.7',
+95 silly addNameRange     '0.9.10',
+95 silly addNameRange     '0.9.11',
+95 silly addNameRange     '0.9.12',
+95 silly addNameRange     '0.9.14',
+95 silly addNameRange     '0.9.16',
+95 silly addNameRange     '0.9.17',
+95 silly addNameRange     '1.0.0',
+95 silly addNameRange     '1.0.1',
+95 silly addNameRange     '1.0.2',
+95 silly addNameRange     '1.0.2-rc',
+95 silly addNameRange     '0.6.10-a',
+95 silly addNameRange     '1.0.2-rc3',
+95 silly addNameRange     '1.0.2-rc4',
+95 silly addNameRange     '1.0.3',
+95 silly addNameRange     '1.0.4',
+95 silly addNameRange     '1.0.5',
+95 silly addNameRange     '1.0.6',
+95 silly addNameRange     '1.0.7',
+95 silly addNameRange     '1.0.8',
+95 silly addNameRange     '1.0.9',
+95 silly addNameRange     '1.0.10',
+95 silly addNameRange     '1.0.11',
+95 silly addNameRange     '1.0.12',
+95 silly addNameRange     '1.0.13',
+95 silly addNameRange     '1.0.14',
+95 silly addNameRange     '1.0.15',
+95 silly addNameRange     '1.0.16',
+95 silly addNameRange     '1.0.17-rc1',
+95 silly addNameRange     '1.0.17-rc2',
+95 silly addNameRange     '1.0.17',
+95 silly addNameRange     '1.0.18',
+95 silly addNameRange     '1.0.19',
+95 silly addNameRange     '1.0.20',
+95 silly addNameRange     '1.1.0-alpha',
+95 silly addNameRange     '1.1.0',
+95 silly addNameRange     '1.1.1',
+95 silly addNameRange     '1.2.0',
+95 silly addNameRange     '1.2.1',
+95 silly addNameRange     '1.3.0-0',
+95 silly addNameRange     '1.3.0-1',
+95 silly addNameRange     '1.3.0-2',
+95 silly addNameRange     '1.3.0-3',
+95 silly addNameRange     '1.3.0-4',
+95 silly addNameRange     '1.3.0-5',
+95 silly addNameRange     '1.3.0-6',
+95 silly addNameRange     '1.3.0-7',
+95 silly addNameRange     '1.3.0',
+95 silly addNameRange     '1.3.1',
+95 silly addNameRange     '1.3.2',
+95 silly addNameRange     '1.3.3',
+95 silly addNameRange     '1.3.5',
+95 silly addNameRange     '1.3.6',
+95 silly addNameRange     '1.3.7',
+95 silly addNameRange     '1.3.8',
+95 silly addNameRange     '1.4.0',
+95 silly addNameRange     '1.4.1',
+95 silly addNameRange     '1.5.0-alpha1',
+95 silly addNameRange     '1.5.0-alpha2',
+95 silly addNameRange     '1.5.0-alpha3',
+95 silly addNameRange     '1.5.0-alpha4',
+95 silly addNameRange     '1.4.2',
+95 silly addNameRange     '1.5.0',
+95 silly addNameRange     '1.5.1',
+95 silly addNameRange     '1.6.0',
+95 silly addNameRange     '1.6.1',
+95 silly addNameRange     '1.7.0',
+95 silly addNameRange     '1.7.1',
+95 silly addNameRange     '1.7.2',
+95 silly addNameRange     '1.7.3',
+95 silly addNameRange     '1.8.0',
+95 silly addNameRange     '1.8.1',
+95 silly addNameRange     '1.9.0',
+95 silly addNameRange     '1.9.1',
+95 silly addNameRange     '1.9.2' ] ]
+96 verbose addNamed [ 'nodemon', '1.9.2' ]
+97 verbose addNamed [ '1.9.2', '1.9.2' ]
+98 silly lockFile 0fd0714b-nodemon-1-9-2 nodemon@1.9.2
+99 verbose lock nodemon@1.9.2 /home/hayek/.npm/0fd0714b-nodemon-1-9-2.lock
+100 silly lockFile 0fd0714b-nodemon-1-9-2 nodemon@1.9.2
+101 silly lockFile 0fd0714b-nodemon-1-9-2 nodemon@1.9.2
+102 silly lockFile 4f5e51c6-nodemon nodemon@
+103 silly lockFile 4f5e51c6-nodemon nodemon@
+104 silly resolved [ { name: 'gulp-cli',
+104 silly resolved     version: '1.2.1',
+104 silly resolved     description: 'Command line interface for gulp',
+104 silly resolved     author:
+104 silly resolved      { name: 'Gulp Team',
+104 silly resolved        email: 'team@gulpjs.com',
+104 silly resolved        url: 'http://gulpjs.com/' },
+104 silly resolved     contributors: [],
+104 silly resolved     homepage: 'http://gulpjs.com',
+104 silly resolved     repository: { type: 'git', url: 'git://github.com/gulpjs/gulp-cli' },
+104 silly resolved     license: 'MIT',
+104 silly resolved     man: [ 'gulp.1' ],
+104 silly resolved     engines: { node: '>= 0.10' },
+104 silly resolved     main: 'index.js',
+104 silly resolved     bin: { gulp: 'bin/gulp.js' },
+104 silly resolved     files: [ 'index.js', 'lib', 'bin', 'completion', 'gulp.1' ],
+104 silly resolved     scripts:
+104 silly resolved      { coveralls: 'lab -r lcov | coveralls',
+104 silly resolved        lint: 'eslint . && jscs index.js bin/ lib/ test/',
+104 silly resolved        prepublish: 'marked-man --name gulp docs/CLI.md > gulp.1',
+104 silly resolved        pretest: 'npm run lint',
+104 silly resolved        test: 'lab test/*.js -cv' },
+104 silly resolved     dependencies:
+104 silly resolved      { archy: '^1.0.0',
+104 silly resolved        chalk: '^1.1.0',
+104 silly resolved        'fancy-log': '^1.1.0',
+104 silly resolved        gulplog: '^1.0.0',
+104 silly resolved        interpret: '^1.0.0',
+104 silly resolved        liftoff: '^2.1.0',
+104 silly resolved        'lodash.sortby': '^4.0.1',
+104 silly resolved        matchdep: '^1.0.0',
+104 silly resolved        'mute-stdout': '^1.0.0',
+104 silly resolved        'pretty-hrtime': '^1.0.0',
+104 silly resolved        'semver-greatest-satisfied-range': '^1.0.0',
+104 silly resolved        tildify: '^1.0.0',
+104 silly resolved        v8flags: '^2.0.9',
+104 silly resolved        wreck: '^6.3.0',
+104 silly resolved        yargs: '^3.28.0' },
+104 silly resolved     devDependencies:
+104 silly resolved      { 'babel-preset-es2015': '^6.5.0',
+104 silly resolved        'babel-register': '^6.5.1',
+104 silly resolved        code: '^1.2.1',
+104 silly resolved        coveralls: '^2.7.0',
+104 silly resolved        eslint: '^1.7.3',
+104 silly resolved        'eslint-config-gulp': '^2.0.0',
+104 silly resolved        'fs-extra': '^0.26.1',
+104 silly resolved        gulp: 'gulpjs/gulp#4.0',
+104 silly resolved        jscs: '^2.3.5',
+104 silly resolved        'jscs-preset-gulp': '^1.0.0',
+104 silly resolved        lab: '^6.2.0',
+104 silly resolved        'marked-man': '^0.1.3' },
+104 silly resolved     keywords: [ 'build', 'stream', 'system', 'make', 'tool', 'asset', 'pipeline' ],
+104 silly resolved     readme: '<p align="center">\n  <a href="http://gulpjs.com">\n    <img height="257" width="114" src="https://raw.githubusercontent.com/gulpjs/artwork/master/gulp-2x.png">\n  </a>\n</p>\n\n# gulp-cli\n\n[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url] [![AppVeyor Build Status][appveyor-image]][appveyor-url] [![Coveralls Status][coveralls-image]][coveralls-url] [![Gitter chat][gitter-image]][gitter-url]\n\nCommand Line Utility for Gulp\n\n## Usage\n\n```bash\n> gulp [flags] tasks\n```\n\n## Custom Metadata\n\nWhen listing tasks with the `gulp -T` command, gulp-cli displays some custom metadata as defined upon task functions. Currently supported properties:\n\n* `task.description` - String of the description to display.\n\n```js\nfunction clean() { ... }\nclean.description = \'Cleans up generated files.\';\n```\n\n* `task.flags` - Object with key/value pairs being flag/description to display.\n\n```js\nfunction build() { ... }\nbuild.flags = {\n  \'--prod\': \'Builds in production mode.\'\n};\n```\n\nExample Usage:\n\n```js\nfunction build() { ... }\nbuild.description = \'Build entire project.\';\nbuild.flags = {\n  \'--prod\': \'Builds in production mode (minification, etc).\'\n};\n// gulp 3.x\ngulp.task(\'build\', build);\n// gulp 4.x\ngulp.task(build);\n```\n\n## Tasks\n\nTasks can be executed by running `gulp <task> <othertask>`. Just running `gulp` will execute the task you registered called `default`. If there is no `default` task, gulp will error.\n\n## Compilers\n\nYou can find a list of supported languages at https://github.com/js-cli/js-interpret. If you would like to add support for a new language, send pull requests/open issues on that project.\n\n## Environment\n\nThe CLI adds process.env.INIT_CWD which is the original cwd it was launched from.\n\n## Flags\n\ngulp has very few flags to know about. All other flags are for tasks to use if needed.\n\n__Some flags only work with gulp 4 and will be ignored when invoked against gulp 3.__\n\n<table>\n  <thead>\n    <tr>\n      <th width="25%">Flag</th>\n      <th width="15%">Short Flag</th>\n      <th>Description</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>--help</td>\n      <td>-h</td>\n      <td>Show this help.</td>\n    </tr>\n    <tr>\n      <td>--version</td>\n      <td>-v</td>\n      <td>Print the global and local gulp versions.</td>\n    </tr>\n    <tr>\n      <td>--require [path]</td>\n      <td></td>\n      <td>Will require a module before running the gulpfile. This is useful for transpilers but also has other applications.</td>\n    </tr>\n    <tr>\n      <td>--gulpfile [path]</td>\n      <td></td>\n      <td>Manually set path of gulpfile. Useful if you have multiple gulpfiles. This will set the CWD to the gulpfile directory as well.</td>\n    </tr>\n    <tr>\n      <td>--cwd [path]</td>\n      <td></td>\n      <td>Manually set the CWD. The search for the gulpfile, as well as the relativity of all requires will be from here.</td>\n    </tr>\n    <tr>\n      <td>--verify [path (optional)]</td>\n      <td></td>\n      <td>Will verify plugins referenced in project\'s package.json against the plugins blacklist.</td>\n    </tr>\n    <tr>\n      <td>--tasks</td>\n      <td>-T</td>\n      <td>Print the task dependency tree for the loaded gulpfile.</td>\n    </tr>\n    <tr>\n      <td>--depth [number]</td>\n      <td></td>\n      <td>Specify the depth of the task dependency tree to print.</td>\n    </tr>\n    <tr>\n      <td>--tasks-simple</td>\n      <td></td>\n      <td>Print a plaintext list of tasks for the loaded gulpfile.</td>\n    </tr>\n    <tr>\n      <td>--tasks-json [path]</td>\n      <td></td>\n      <td>Print the task dependency tree, in JSON format, for the loaded gulpfile. The [path] argument is optional, and if given writes the JSON to the path.</td>\n    </tr>\n    <tr>\n      <td>--color</td>\n      <td></td>\n      <td>Will force gulp and gulp plugins to display colors, even when no color support is detected.</td>\n    </tr>\n    <tr>\n      <td>--no-color</td>\n      <td></td>\n      <td>Will force gulp and gulp plugins to not display colors, even when color support is detected.</td>\n    </tr>\n    <tr>\n      <td>--silent</td>\n      <td>-S</td>\n      <td>Suppress all gulp logging.</td>\n    </tr>\n    <tr>\n      <td>--continue</td>\n      <td></td>\n      <td>Continue execution of tasks upon failure.</td>\n    </tr>\n    <tr>\n      <td>--log-level</td>\n      <td>-L</td>\n      <td>Set the loglevel. -L for least verbose and -LLLL for most verbose. -LLL is default.</td>\n    </tr>\n  </tbody>\n</table>\n\n## License\n\nMIT\n\n[gittip-url]: https://www.gittip.com/WeAreFractal/\n[gittip-image]: http://img.shields.io/gittip/WeAreFractal.svg\n\n[downloads-image]: http://img.shields.io/npm/dm/gulp-cli.svg\n[npm-url]: https://npmjs.org/package/gulp-cli\n[npm-image]: http://img.shields.io/npm/v/gulp-cli.svg\n\n[travis-url]: https://travis-ci.org/gulpjs/gulp-cli\n[travis-image]: http://img.shields.io/travis/gulpjs/gulp-cli.svg?label=travis-ci\n\n[appveyor-url]: https://ci.appveyor.com/project/gulpjs/gulp-cli\n[appveyor-image]: https://img.shields.io/appveyor/ci/gulpjs/gulp-cli.svg?label=appveyor\n\n[coveralls-url]: https://coveralls.io/r/gulpjs/gulp-cli\n[coveralls-image]: http://img.shields.io/coveralls/gulpjs/gulp-cli/master.svg\n\n[gitter-url]: https://gitter.im/gulpjs/gulp\n[gitter-image]: https://badges.gitter.im/gulpjs/gulp.png\n',
+104 silly resolved     readmeFilename: 'README.md',
+104 silly resolved     bugs: { url: 'https://github.com/gulpjs/gulp-cli/issues' },
+104 silly resolved     _id: 'gulp-cli@1.2.1',
+104 silly resolved     _from: 'gulp-cli@' },
+104 silly resolved   { name: 'bower',
+104 silly resolved     version: '1.7.9',
+104 silly resolved     description: 'The browser package manager',
+104 silly resolved     author: { name: 'Twitter' },
+104 silly resolved     license: 'MIT',
+104 silly resolved     repository: { type: 'git', url: 'git://github.com/bower/bower' },
+104 silly resolved     main: 'lib',
+104 silly resolved     bin: { bower: 'bin/bower' },
+104 silly resolved     homepage: 'http://bower.io',
+104 silly resolved     engines: { node: '>=0.10.0' },
+104 silly resolved     keywords: [ 'bower' ],
+104 silly resolved     files: [ 'bin', 'lib' ],
+104 silly resolved     readme: '# Bower - A package manager for the web\n\n> Bower needs resources for its maintenance. Please fill [this form](https://docs.google.com/forms/d/1i-Opb-uPdqUBBZQSbngv3Y3bfolG1gbBvtRLfxMnzRE/viewform?c=0&w=1) if you think you can help.\n\n[![Build Status](https://travis-ci.org/bower/bower.svg?branch=master)](https://travis-ci.org/bower/bower)\n[![Windows Build](https://ci.appveyor.com/api/projects/status/jr6vfra8w84plh2g/branch/master?svg=true)](https://ci.appveyor.com/project/sheerun/bower/history)\n[![Coverage Status](https://img.shields.io/coveralls/bower/bower.svg)](https://coveralls.io/r/bower/bower?branch=master)\n[![Discord chat](https://img.shields.io/badge/discord-join%20chat%20%E2%86%92-brightgreen.svg?style=flat)](https://discord.gg/0fFM7QF0KpZRh2cY)\n[![Issue Stats](http://issuestats.com/github/bower/bower/badge/pr?style=flat)](http://issuestats.com/github/bower/bower)\n[![Issue Stats](http://issuestats.com/github/bower/bower/badge/issue?style=flat)](http://issuestats.com/github/bower/bower)\n\n<img align="right" height="300" src="http://bower.io/img/bower-logo.png">\n\n---\n\nBower offers a generic, unopinionated solution to the problem of **front-end package management**, while exposing the package dependency model via an API that can be consumed by a more opinionated build stack. There are no system wide dependencies, no dependencies are shared between different apps, and the dependency tree is flat.\n\nBower runs over Git, and is package-agnostic. A packaged component can be made up of any type of asset, and use any type of transport (e.g., AMD, CommonJS, etc.).\n\n**View complete docs on [bower.io](http://bower.io)**\n\n[View all packages available through Bower\'s registry](http://bower.io/search/).\n\n## Install\n\n```sh\n$ npm install -g bower\n```\n\nBower depends on [Node.js](http://nodejs.org/) and [npm](http://npmjs.org/). Also make sure that [git](http://git-scm.com/) is installed as some bower\npackages require it to be fetched and installed.\n\n\n## Usage\n\nSee complete command line reference at [bower.io/docs/api/](http://bower.io/docs/api/)\n\n### Installing packages and dependencies\n\n```sh\n# install dependencies listed in bower.json\n$ bower install\n\n# install a package and add it to bower.json\n$ bower install <package> --save\n\n# install specific version of a package and add it to bower.json\n$ bower install <package>#<version> --save\n```\n\n### Using packages\n\nWe discourage using bower components statically for performance and security reasons (if component has an `upload.php` file that is not ignored, that can be easily exploited to do malicious stuff).\n\nThe best approach is to process components installed by bower with build tool (like [Grunt](http://gruntjs.com/) or [gulp](http://gulpjs.com/)), and serve them concatenated or using a module loader (like [RequireJS](http://requirejs.org/)).\n\n### Uninstalling packages\n\nTo uninstall a locally installed package:\n\n```sh\n$ bower uninstall <package-name>\n```\n\n### prezto and oh-my-zsh users\n\nOn `prezto` or `oh-my-zsh`, do not forget to `alias bower=\'noglob bower\'` or `bower install jquery\\#1.9.1`\n\n### Never run Bower with sudo\n\nBower is a user command; there is no need to execute it with superuser permissions.\n\n### Windows users\n\nTo use Bower on Windows, you must install\n[Git for Windows](http://git-for-windows.github.io/) correctly. Be sure to check the\noptions shown below:\n\n<img src="https://cloud.githubusercontent.com/assets/10702007/10532690/d2e8991a-7386-11e5-9a57-613c7f92e84e.png" width="534" height="418" alt="Git for Windows" />\n\n<img src="https://cloud.githubusercontent.com/assets/10702007/10532694/dbe8857a-7386-11e5-9bd0-367e97644403.png" width="534" height="418" alt="Git for Windows" />\n\nNote that if you use TortoiseGit and if Bower keeps asking for your SSH\npassword, you should add the following environment variable: `GIT_SSH -\nC:\\Program Files\\TortoiseGit\\bin\\TortoisePlink.exe`. Adjust the `TortoisePlink`\npath if needed.\n\n### Ubuntu users\n\nTo use Bower on Ubuntu, you might need to link `nodejs` executable to `node`:\n\n```\nsudo ln -s /usr/bin/nodejs /usr/bin/node\n```\n\n## Configuration\n\nBower can be configured using JSON in a `.bowerrc` file. Read over available options at [bower.io/docs/config](http://bower.io/docs/config).\n\n\n## Support\n\n* [Discord chat](https://discord.gg/0fFM7QF0KpZRh2cY)\n* [StackOverflow](http://stackoverflow.com/questions/tagged/bower)\n* [Mailinglist](http://groups.google.com/group/twitter-bower) - twitter-bower@googlegroups.com\n\n## Contributing\n\nWe welcome [contributions](https://github.com/bower/bower/graphs/contributors) of all kinds from anyone. Please take a moment to review the [guidelines for contributing](CONTRIBUTING.md).\n\n* [Bug reports](https://github.com/bower/bower/wiki/Report-a-Bug)\n* [Feature requests](CONTRIBUTING.md#features)\n* [Pull requests](CONTRIBUTING.md#pull-requests)\n\n\nNote that on Windows for tests to pass you need to configure Git before cloning:\n\n```\ngit config --global core.autocrlf input\n```\n\n## License\n\nCopyright (c) 2016 Twitter and [other contributors](https://github.com/bower/bower/graphs/contributors)\n\nLicensed under the MIT License\n',
+104 silly resolved     readmeFilename: 'README.md',
+104 silly resolved     bugs: { url: 'https://github.com/bower/bower/issues' },
+104 silly resolved     _id: 'bower@1.7.9',
+104 silly resolved     _from: 'bower@' },
+104 silly resolved   { name: 'gulp',
+104 silly resolved     description: 'The streaming build system',
+104 silly resolved     version: '3.9.1',
+104 silly resolved     homepage: 'http://gulpjs.com',
+104 silly resolved     repository: { type: 'git', url: 'git://github.com/gulpjs/gulp' },
+104 silly resolved     author:
+104 silly resolved      { name: 'Fractal',
+104 silly resolved        email: 'contact@wearefractal.com',
+104 silly resolved        url: 'http://wearefractal.com/' },
+104 silly resolved     tags: [ 'build', 'stream', 'system', 'make', 'tool', 'asset', 'pipeline' ],
+104 silly resolved     files: [ 'index.js', 'lib', 'bin', 'completion', 'gulp.1' ],
+104 silly resolved     bin: { gulp: './bin/gulp.js' },
+104 silly resolved     man: [ 'gulp.1' ],
+104 silly resolved     dependencies:
+104 silly resolved      { archy: '^1.0.0',
+104 silly resolved        chalk: '^1.0.0',
+104 silly resolved        deprecated: '^0.0.1',
+104 silly resolved        'gulp-util': '^3.0.0',
+104 silly resolved        interpret: '^1.0.0',
+104 silly resolved        liftoff: '^2.1.0',
+104 silly resolved        minimist: '^1.1.0',
+104 silly resolved        orchestrator: '^0.3.0',
+104 silly resolved        'pretty-hrtime': '^1.0.0',
+104 silly resolved        semver: '^4.1.0',
+104 silly resolved        tildify: '^1.0.0',
+104 silly resolved        v8flags: '^2.0.2',
+104 silly resolved        'vinyl-fs': '^0.3.0' },
+104 silly resolved     devDependencies:
+104 silly resolved      { coveralls: '^2.7.0',
+104 silly resolved        eslint: '^1.7.3',
+104 silly resolved        'eslint-config-gulp': '^2.0.0',
+104 silly resolved        'graceful-fs': '^3.0.0',
+104 silly resolved        istanbul: '^0.3.0',
+104 silly resolved        jscs: '^2.3.5',
+104 silly resolved        'jscs-preset-gulp': '^1.0.0',
+104 silly resolved        'marked-man': '^0.1.3',
+104 silly resolved        mkdirp: '^0.5.0',
+104 silly resolved        mocha: '^2.0.1',
+104 silly resolved        'mocha-lcov-reporter': '^0.0.1',
+104 silly resolved        q: '^1.0.0',
+104 silly resolved        rimraf: '^2.2.5',
+104 silly resolved        should: '^5.0.1' },
+104 silly resolved     scripts:
+104 silly resolved      { prepublish: 'marked-man --name gulp docs/CLI.md > gulp.1',
+104 silly resolved        lint: 'eslint . && jscs *.js bin/ lib/ test/',
+104 silly resolved        pretest: 'npm run lint',
+104 silly resolved        test: 'mocha --reporter spec',
+104 silly resolved        coveralls: 'istanbul cover _mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage' },
+104 silly resolved     engines: { node: '>= 0.9' },
+104 silly resolved     license: 'MIT',
+104 silly resolved     readme: '<p align="center">\n  <a href="http://gulpjs.com">\n    <img height="257" width="114" src="https://raw.githubusercontent.com/gulpjs/artwork/master/gulp-2x.png">\n  </a>\n  <p align="center">The streaming build system</p>\n</p>\n\n[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coveralls Status][coveralls-image]][coveralls-url] [![Gitter chat][gitter-image]][gitter-url]\n\n## What is gulp?\n\n- **Automation** - gulp is a toolkit that helps you automate painful or time-consuming tasks in your development workflow.\n- **Platform-agnostic** - Integrations are built into all major IDEs and people are using gulp with PHP, .NET, Node.js, Java, and other platforms.\n- **Strong Ecosystem** - Use npm modules to do anything you want + over 2000 curated plugins for streaming file transformations\n- **Simple** - By providing only a minimal API surface, gulp is easy to learn and simple to use\n\n## Documentation\n\nFor a Getting started guide, API docs, recipes, making a plugin, etc. check out or docs!\n\n- Need something reliable? Check out the [documentation for the current release](/docs/README.md)!\n- Want to help us test the latest and greatest? Check out the [documentation for the next release](https://github.com/gulpjs/gulp/tree/4.0)!\n\n## Sample `gulpfile.js`\n\nThis file will give you a taste of what gulp does.\n\n```js\nvar gulp = require(\'gulp\');\nvar coffee = require(\'gulp-coffee\');\nvar concat = require(\'gulp-concat\');\nvar uglify = require(\'gulp-uglify\');\nvar imagemin = require(\'gulp-imagemin\');\nvar sourcemaps = require(\'gulp-sourcemaps\');\nvar del = require(\'del\');\n\nvar paths = {\n  scripts: [\'client/js/**/*.coffee\', \'!client/external/**/*.coffee\'],\n  images: \'client/img/**/*\'\n};\n\n// Not all tasks need to use streams\n// A gulpfile is just another node program and you can use any package available on npm\ngulp.task(\'clean\', function() {\n  // You can use multiple globbing patterns as you would with `gulp.src`\n  return del([\'build\']);\n});\n\ngulp.task(\'scripts\', [\'clean\'], function() {\n  // Minify and copy all JavaScript (except vendor scripts)\n  // with sourcemaps all the way down\n  return gulp.src(paths.scripts)\n    .pipe(sourcemaps.init())\n      .pipe(coffee())\n      .pipe(uglify())\n      .pipe(concat(\'all.min.js\'))\n    .pipe(sourcemaps.write())\n    .pipe(gulp.dest(\'build/js\'));\n});\n\n// Copy all static images\ngulp.task(\'images\', [\'clean\'], function() {\n  return gulp.src(paths.images)\n    // Pass in options to the task\n    .pipe(imagemin({optimizationLevel: 5}))\n    .pipe(gulp.dest(\'build/img\'));\n});\n\n// Rerun the task when a file changes\ngulp.task(\'watch\', function() {\n  gulp.watch(paths.scripts, [\'scripts\']);\n  gulp.watch(paths.images, [\'images\']);\n});\n\n// The default task (called when you run `gulp` from cli)\ngulp.task(\'default\', [\'watch\', \'scripts\', \'images\']);\n```\n\n## Incremental Builds\n\nWe recommend these plugins:\n\n- [gulp-changed](https://github.com/sindresorhus/gulp-changed) - only pass through changed files\n- [gulp-cached](https://github.com/contra/gulp-cached) - in-memory file cache, not for operation on sets of files\n- [gulp-remember](https://github.com/ahaurw01/gulp-remember) - pairs nicely with gulp-cached\n- [gulp-newer](https://github.com/tschaub/gulp-newer) - pass through newer source files only, supports many:1 source:dest\n\n## Want to contribute?\n\nAnyone can help make this project better - check out our [Contributing guide](/CONTRIBUTING.md)!\n\n[downloads-image]: https://img.shields.io/npm/dm/gulp.svg\n[npm-url]: https://www.npmjs.com/package/gulp\n[npm-image]: https://img.shields.io/npm/v/gulp.svg\n\n[travis-url]: https://travis-ci.org/gulpjs/gulp\n[travis-image]: https://img.shields.io/travis/gulpjs/gulp.svg\n\n[coveralls-url]: https://coveralls.io/r/gulpjs/gulp\n[coveralls-image]: https://img.shields.io/coveralls/gulpjs/gulp/master.svg\n\n[gitter-url]: https://gitter.im/gulpjs/gulp\n[gitter-image]: https://badges.gitter.im/gulpjs/gulp.png\n',
+104 silly resolved     readmeFilename: 'README.md',
+104 silly resolved     bugs: { url: 'https://github.com/gulpjs/gulp/issues' },
+104 silly resolved     _id: 'gulp@3.9.1',
+104 silly resolved     _from: 'gulp@' },
+104 silly resolved   { name: 'nodemon',
+104 silly resolved     homepage: 'http://nodemon.io',
+104 silly resolved     author: { name: 'Remy Sharp', url: 'http://github.com/remy' },
+104 silly resolved     bin: { nodemon: './bin/nodemon.js' },
+104 silly resolved     engines: { node: '>=0.8' },
+104 silly resolved     repository: { type: 'git', url: 'https://github.com/remy/nodemon.git' },
+104 silly resolved     description: 'Simple monitor script for use during development of a node.js app.',
+104 silly resolved     keywords:
+104 silly resolved      [ 'monitor',
+104 silly resolved        'development',
+104 silly resolved        'restart',
+104 silly resolved        'autoload',
+104 silly resolved        'reload',
+104 silly resolved        'terminal' ],
+104 silly resolved     license: 'MIT',
+104 silly resolved     main: './lib/nodemon',
+104 silly resolved     scripts:
+104 silly resolved      { coverage: 'istanbul cover _mocha -- --timeout 30000 --ui bdd --reporter list test/**/*.test.js',
+104 silly resolved        lint: 'jscs lib/**/*.js -v',
+104 silly resolved        ':spec': 'node_modules/.bin/mocha --timeout 30000 --ui bdd test/**/*.test.js',
+104 silly resolved        test: 'npm run lint && npm run spec',
+104 silly resolved        spec: 'for FILE in test/**/*.test.js; do echo $FILE; ./node_modules/.bin/mocha --timeout 30000 $FILE; if [ $? -ne 0 ]; then exit 1; fi; sleep 1; done',
+104 silly resolved        web: 'node web',
+104 silly resolved        'semantic-release': 'semantic-release pre && npm publish && semantic-release post' },
+104 silly resolved     devDependencies:
+104 silly resolved      { async: '1.4.2',
+104 silly resolved        'coffee-script': '~1.7.1',
+104 silly resolved        connect: '~2.19.1',
+104 silly resolved        istanbul: '~0.2.10',
+104 silly resolved        jscs: '2.1.1',
+104 silly resolved        mocha: '2.3.3',
+104 silly resolved        should: '~4.0.0',
+104 silly resolved        'semantic-release': '4.3.5' },
+104 silly resolved     dependencies:
+104 silly resolved      { chokidar: '^1.4.3',
+104 silly resolved        debug: '^2.2.0',
+104 silly resolved        'es6-promise': '^3.0.2',
+104 silly resolved        'ignore-by-default': '^1.0.0',
+104 silly resolved        'lodash.defaults': '^3.1.2',
+104 silly resolved        minimatch: '^3.0.0',
+104 silly resolved        'ps-tree': '^1.0.1',
+104 silly resolved        touch: '1.0.0',
+104 silly resolved        undefsafe: '0.0.3',
+104 silly resolved        'update-notifier': '0.5.0' },
+104 silly resolved     version: '1.9.2',
+104 silly resolved     readme: '![nodemon logo](http://nodemon.io/nodemon.svg)\n\n# nodemon\n\n[![Donate](https://img.shields.io/badge/donate-%20%E2%9D%A4%20-green.svg)](https://www.paypal.me/rem)\n\nFor use during development of a node.js based application.\n\nnodemon will watch the files in the directory in which nodemon was started, and if any files change, nodemon will automatically restart your node application.\n\nnodemon does **not** require *any* changes to your code or method of development. nodemon simply wraps your node application and keeps an eye on any files that have changed. Remember that nodemon is a replacement wrapper for `node`, think of it as replacing the word "node" on the command line when you run your script.\n\n[![NPM version](https://badge.fury.io/js/nodemon.svg)](https://npmjs.org/package/nodemon)\n[![Travis Status](https://travis-ci.org/remy/nodemon.svg?branch=master)](https://travis-ci.org/remy/nodemon)\n\n# Installation\n\nEither through forking or by using [npm](http://npmjs.org) (the recommended way):\n\n    npm install -g nodemon\n\nAnd nodemon will be installed in to your bin path. Note that as of npm v1, you must explicitly tell npm to install globally as nodemon is a command line utility.\n\n# Usage\n\nnodemon wraps your application, so you can pass all the arguments you would normally pass to your app:\n\n    nodemon [your node app]\n\nFor CLI options, use the `-h` (or `--help`) argument:\n\n    nodemon -h\n\nUsing nodemon is simple, if my application accepted a host and port as the arguments, I would start it as so:\n\n    nodemon ./server.js localhost 8080\n\nAny output from this script is prefixed with `[nodemon]`, otherwise all output from your application, errors included, will be echoed out as expected.\n\nnodemon also supports running and monitoring [coffee-script](http://coffeescript.org/) apps:\n\n    nodemon server.coffee\n\nIf no script is given, nodemon will test for a `package.json` file and if found, will run the file associated with the *main* property ([ref](https://github.com/remy/nodemon/issues/14)).\n\nYou can also pass the debug flag to node through the command line as you would normally:\n\n    nodemon --debug ./server.js 80\n\nIf you have a `package.json` file for your app, you can omit the main script entirely and nodemon will read the `package.json` for the `main` property and use that value as the app.\n\nnodemon will also search for the `scripts.start` property in `package.json` (as of nodemon 1.1.x).\n\nAlso check out the [FAQ](https://github.com/remy/nodemon/blob/master/faq.md) or [issues](https://github.com/remy/nodemon/issues) for nodemon.\n\n## Automatic re-running\n\nnodemon was originally written to restart hanging processes such as web servers, but now supports apps that cleanly exit. If your script exits cleanly, nodemon will continue to monitor the directory (or directories) and restart the script if there are any changes.\n\n## Manual restarting\n\nWhilst nodemon is running, if you need to manually restart your application, instead of stopping and restart nodemon, you can simply type `rs` with a carriage return, and nodemon will restart your process.\n\n## Config files\n\nnodemon supports local and global configuration files. These are named `nodemon.json` and can be located in the current working directory or in your home directory.\n\nThe specificity is as follows, so that a command line argument will always override the config file settings:\n\n- command line arguments\n- local config\n- global config\n\nA config file can take any of the command line arguments as JSON key values, for example:\n\n    {\n      "verbose": true,\n      "ignore": ["*.test.js", "fixtures/*"],\n      "execMap": {\n        "rb": "ruby",\n        "pde": "processing --sketch={{pwd}} --run"\n      }\n    }\n\nThe above `nodemon.json` file might be my global config so that I have support for ruby files and processing files, and I can simply run `nodemon demo.pde` and nodemon will automatically know how to run the script even though out of the box support for processing scripts.\n\nA further example of options can be seen in [sample-nodemon.md](https://github.com/remy/nodemon/blob/master/doc/sample-nodemon.md)\n\n*This section needs better documentation, but for now you can also see `nodemon --help config` ([also here](https://github.com/remy/nodemon/blob/master/doc/cli/config.txt))*.\n\n## Using nodemon as a module\n\nPlease see [doc/requireable.md](doc/requireable.md)\n\n## Running non-node scripts\n\nnodemon can also be used to execute and monitor other programs. nodemon will read the file extension of the script being run and monitor that extension instead of .js if there\'s no .nodemonignore:\n\n    nodemon --exec "python -v" ./app.py\n\nNow nodemon will run `app.py` with python in verbose mode (note that if you\'re not passing args to the exec program, you don\'t need the quotes), and look for new or modified files with the `.py` extension.\n\n### Default executables\n\nUsing the `nodemon.json` config file, you can define your own default executables using the `execMap` property. This is particularly useful if you\'re working with a language that isn\'t supported by default by nodemon.\n\nTo add support for nodemon to know about the .pl extension (for Perl), the nodemon.json file would add:\n\n    {\n      "execMap": {\n         "pl": "perl"\n      }\n    }\n\nNow running the following, nodemon will know to use `perl` as the executable:\n\n    nodemon script.pl\n\nIt\'s generally recommended to use the global `nodemon.json` to add your own `execMap` options. However, if there\'s a common default that\'s missing, this can be merged in to the project so that nodemon supports it by default, by changing [default.js](https://github.com/remy/nodemon/blob/master/lib/config/defaults.js) and sending a pull request.\n\n## Monitoring multiple directories\n\nBy default nodemon monitors the current working directory. If you want to take control of that option, use the `--watch` option to add specific paths:\n\n    nodemon --watch app --watch libs app/server.js\n\nNow nodemon will only restart if there are changes in the `./app` or `./libs` directory. By default nodemon will traverse sub-directories, so there\'s no need in explicitly including sub-directories.\n\nDon\'t use unix globbing to pass multiple directories, e.g `--watch ./lib/*`, it won\'t work. You need a `--watch` flag per directory watched.\n\n## Specifying extension watch list\n\nBy default, nodemon looks for files with the `.js`, `.coffee`, `.litcoffee`, and `.json` extensions. If you use the `--exec` option and monitor `app.py` nodemon will monitor files with the extension of `.py`. However, you can specify your own list with the `-e` (or `--ext`) switch like so:\n\n    nodemon -e js,jade\n\nNow nodemon will restart on any changes to files in the directory (or subdirectories) with the extensions .js, .jade.\n\n## Ignoring files\n\nBy default, nodemon will only restart when a `.js` JavaScript file changes. In some cases you will want to ignore some specific files, directories or file patterns, to prevent nodemon from prematurely restarting your application.\n\nThis can be done via the command line:\n\n    nodemon --ignore lib/ --ignore tests/\n\nOr specific files can be ignored:\n\n    nodemon --ignore lib/app.js\n\nPatterns can also be ignored (but be sure to quote the arguments):\n\n    nodemon --ignore \'lib/*.js\'\n\nNote that by default, nodemon will ignore the `.git`, `node_modules`, `bower_components` and `.sass-cache` directories and *add* your ignored patterns to the list. If you want to indeed watch a directory like `node_modules`, you need to [overriding the underlying default ignore rules](https://github.com/remy/nodemon/blob/master/faq.md#overriding-the-underlying-default-ignore-rules).\n\n## Application isn\'t restarting\n\nIn some networked environments (such as a container running nodemon reading across a mounted drive), you will need to use the `legacyWatch: true` which enabled Chokidar\'s polling.\n\nVia the CLI, use either `--legacy-watch` or `-L` for short:\n\n    nodemon -L\n\nThough this should be a last resort as it will poll every file it can find.\n\n## Delaying restarting\n\nIn some situations, you may want to wait until a number of files have changed. The timeout before checking for new file changes is 1 second. If you\'re uploading a number of files and it\'s taking some number of seconds, this could cause your app to restart multiple times unnecessarily.\n\nTo add an extra throttle, or delay restarting, use the `--delay` command:\n\n    nodemon --delay 10 server.js\n\nFor more precision, milliseconds can be specified.  Either as a float:\n\n    nodemon --delay 2.5 server.js\n\nOr using the time specifier (ms):\n\n    nodemon --delay 2500ms server.js\n\nThe delay figure is number of seconds (or milliseconds, if specified) to delay before restarting. So nodemon will only restart your app the given number of seconds after the *last* file change.\n\n## Controlling shutdown of your script\n\nnodemon sends a kill signal to your application when it sees a file update. If you need to clean up on shutdown inside your script you can capture the kill signal and handle it yourself.\n\nThe following example will listen once for the `SIGUSR2` signal (used by nodemon to restart), run the clean up process and then kill itself for nodemon to continue control:\n\n    process.once(\'SIGUSR2\', function () {\n      gracefulShutdown(function () {\n        process.kill(process.pid, \'SIGUSR2\');\n      });\n    });\n\nNote that the `process.kill` is *only* called once your shutdown jobs are complete. Hat tip to [Benjie Gillam](http://www.benjiegillam.com/2011/08/node-js-clean-restart-and-faster-development-with-nodemon/) for writing this technique up.\n\n## Triggering events when nodemon state changes\n\nIf you want growl like notifications when nodemon restarts or to trigger an action when an event happens, then you can either `require` nodemon or simply add event actions to your `nodemon.json` file.\n\nFor example, to trigger a notification on a Mac when nodemon restarts, `nodemon.json` looks like this:\n\n```json\n{\n  "events": {\n    "restart": "osascript -e \'display notification \\"app restarted\\" with title \\"nodemon\\"\'"\n  }\n}\n```\n\nA full list of available events is listed on the [event states wiki](https://github.com/remy/nodemon/wiki/Events#states). Note that you can bind to both states and messages.\n\n## Pipe output to somewhere else\n\n```js\nnodemon({\n  script: ...,\n  stdout: false // important: this tells nodemon not to output to console\n}).on(\'readable\', function() { // the `readable` event indicates that data is ready to pick up\n  this.stdout.pipe(fs.createWriteStream(\'output.txt\'));\n  this.stderr.pipe(fs.createWriteStream(\'err.txt\'));\n});\n```\n\n## Using io.js for nodemon\n\nIf you *only* have io.js installed (and the default install creates a symlink from `node` to `iojs`), then nodemon will work just fine out of the box (or [should](https://github.com/remy/nodemon/issues/468)).\n\nIf you\'ve got *both* node and io.js installed, then it\'s easy! You can either edit the local `nodemon.json` file (in your working directory) or in your `$HOME` directory containing:\n\n```json\n{\n  "execMap": {\n    "js": "iojs"\n  }\n}\n```\n\nNow you nodemon will use [io.js](https://iojs.org/) with JavaScript files instead of node.\n\n## Using nodemon in your gulp workflow\n\nCheck out the [gulp-nodemon](https://github.com/JacksonGariety/gulp-nodemon) plugin to integrate nodemon with the rest of your project\'s gulp workflow.\n\n## Using nodemon in your Grunt workflow\n\nCheck out the [grunt-nodemon](https://github.com/ChrisWren/grunt-nodemon) plugin to integrate nodemon with the rest of your project\'s grunt workflow.\n\n## Pronunciation\n\n> nodemon, is it pronounced: node-mon, no-demon or node-e-mon (like pokémon)?\n\nWell...I\'ve been asked this many times before. I like that I\'ve been asked this before. There\'s been bets as to which one it actually is.\n\nThe answer is simple, but possibly frustrating. I\'m not saying (how I pronounce it). It\'s up to you to call it as you like. All answers are correct :)\n\n## FAQ\n\nSee the [FAQ](https://github.com/remy/nodemon/blob/master/faq.md) and please add your own questions if you think they would help others.\n\n# License\n\nMIT [http://rem.mit-license.org](http://rem.mit-license.org)\n',
+104 silly resolved     readmeFilename: 'README.md',
+104 silly resolved     bugs: { url: 'https://github.com/remy/nodemon/issues' },
+104 silly resolved     _id: 'nodemon@1.9.2',
+104 silly resolved     _from: 'nodemon@' } ]
+105 info install gulp-cli@1.2.1 into /usr/local/lib
+106 info install bower@1.7.9 into /usr/local/lib
+107 info install gulp@3.9.1 into /usr/local/lib
+108 info install nodemon@1.9.2 into /usr/local/lib
+109 info installOne gulp-cli@1.2.1
+110 info installOne bower@1.7.9
+111 info installOne gulp@3.9.1
+112 info installOne nodemon@1.9.2
+113 info /usr/local/lib/node_modules/gulp-cli unbuild
+114 info /usr/local/lib/node_modules/bower unbuild
+115 info /usr/local/lib/node_modules/gulp unbuild
+116 info /usr/local/lib/node_modules/nodemon unbuild
+117 info preuninstall gulp-cli@1.2.1
+118 info preuninstall bower@1.7.9
+119 info preuninstall nodemon@1.9.2
+120 info preuninstall gulp@3.9.1
+121 info uninstall gulp-cli@1.2.1
+122 info uninstall bower@1.7.9
+123 info uninstall nodemon@1.9.2
+124 info uninstall gulp@3.9.1
+125 verbose true,/usr/local/lib/node_modules,/usr/local/lib/node_modules unbuild gulp-cli@1.2.1
+126 verbose /usr/local/bin,[object Object] binRoot
+127 verbose true,/usr/local/lib/node_modules,/usr/local/lib/node_modules unbuild bower@1.7.9
+128 verbose /usr/local/bin,[object Object] binRoot
+129 verbose true,/usr/local/lib/node_modules,/usr/local/lib/node_modules unbuild nodemon@1.9.2
+130 verbose /usr/local/bin,[object Object] binRoot
+131 verbose true,/usr/local/lib/node_modules,/usr/local/lib/node_modules unbuild gulp@3.9.1
+132 verbose /usr/local/bin,[object Object] binRoot
+133 info /usr/local/lib/node_modules/gulp-cli unbuild
+134 info postuninstall bower@1.7.9
+135 info postuninstall gulp@3.9.1
+136 info postuninstall nodemon@1.9.2
+137 info preuninstall gulp-cli@1.2.1
+138 info uninstall gulp-cli@1.2.1
+139 verbose true,/usr/local/lib/node_modules,/usr/local/lib/node_modules unbuild gulp-cli@1.2.1
+140 verbose /usr/local/bin,[object Object] binRoot
+141 info postuninstall gulp-cli@1.2.1
+142 verbose tar unpack /home/hayek/.npm/bower/1.7.9/package.tgz
+143 silly lockFile 1396471b-usr-local-lib-node-modules-bower tar:///usr/local/lib/node_modules/bower
+144 verbose lock tar:///usr/local/lib/node_modules/bower /home/hayek/.npm/1396471b-usr-local-lib-node-modules-bower.lock
+145 silly lockFile 7a6a21f5-ayek-npm-bower-1-7-9-package-tgz tar:///home/hayek/.npm/bower/1.7.9/package.tgz
+146 verbose lock tar:///home/hayek/.npm/bower/1.7.9/package.tgz /home/hayek/.npm/7a6a21f5-ayek-npm-bower-1-7-9-package-tgz.lock
+147 silly gunzTarPerm modes [ '755', '644' ]
+148 silly gunzTarPerm extractEntry package.json
+149 silly gunzTarPerm extractEntry README.md
+150 silly gunzTarPerm extractEntry bin/bower
+151 error Refusing to delete: /usr/local/bin/gulp not in /usr/local/lib/node_modules/gulp-cli
+File exists: /usr/local/bin/gulp
+Move it away, and try again.
+152 error System Linux 3.13.0-91-generic
+153 error command "/usr/bin/nodejs" "/usr/bin/npm" "install" "-g" "bower" "gulp" "gulp-cli" "nodemon"
+154 error cwd /home/hayek/Anaximander/client
+155 error node -v v0.10.25
+156 error npm -v 1.3.10
+157 error path /usr/local/bin/gulp
+158 error code EEXIST
+159 verbose exit [ 1, true ]
