@@ -11,13 +11,17 @@
         	</div>
           <br />          
       	</div>
-        <div class="panel-body" ng-show="home.showStatistics">
-          <div class="col-xs-6 col-md-12">          
-            <div>         
-              <button id="socketTrips" ng-click="home.getSocketTrips()">Search Trips</button>
-            </div>
+        <div class="panel-body statistics" ng-show="home.showStatistics">
+          <div class="col-xs-6 col-md-12">                    
             <div ng-show="home.drawingMap">
               Map Draw in Progress
+            </div>
+            <div>
+              <label for="maxResults">Max Results (20,000)</label>
+              <input id="maxReults" type="number" ng-model="home.queryLimit" min="{{home.queryMin}}" max="{{home.queryMax}}">
+            </div>
+            <div>         
+              <button id="socketTrips" ng-click="home.getSocketTrips()">Search Trips</button>
             </div>
           </div>
           <div class="col-xs-6 col-md-12">
@@ -31,6 +35,18 @@
         <div class="panel-body" ng-show="home.showControls">
           <div>
           <h5>Markers</h5>
+          <div class="persistence">
+            <div>
+              <label for="saveShape">Save Shape</label>
+              <input type="text" placeholder="Shape Name" ng-model="home.saveShapeName"/>
+              <button ng-click="home.saveShape()">Save</button>
+            </div>
+            <div>
+              <label for="saveShape">Load Shape</label>
+              <input type="text" placeholder="Shape Name" ng-model="home.loadShapeName"/>
+              <button>Search</button>
+            </div>
+          </div>
           <h5>Geofence</h5>
             <button ng-click="home.togglePolygon()" title="Add Geopoint on Click" ng-show="!home.drawingPoly">
             	<i class="fa fa-crosshairs fa-3x fa-fw" aria-hidden="true"></i>

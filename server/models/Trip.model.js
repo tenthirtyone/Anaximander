@@ -5,8 +5,8 @@ var tripSchema = new Schema({
   dropoff : {
     type : {
     	type: String, 
-    	default: "Point"}
-    	,
+    	default: "Point"
+    },
     coordinates : [Number]
   },
   pickup : {

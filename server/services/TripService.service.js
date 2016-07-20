@@ -2,6 +2,7 @@
 
 var config = require("config");
 var logger = require("../common/logger");
+var Shape = require("../models/Shape.model.js");
 var Trip = require("../models/Trip.model.js");
 
 function getTrip(tripid, callback) {
@@ -16,43 +17,43 @@ function getTrip(tripid, callback) {
 }
 
 function getSocketTrips(query, socket) {  
-  var stopTime, startTime;
-  startTime = Date.now();
-
   var pickupTime = new Date(query.pickupTime).toISOString();
   var dropoffTime = new Date(query.dropoffTime).toISOString();
+  var limit = query.limit < 20000 ? query.limit : 20000;
 
-  Trip.find({
-    dropoffTime: {
-      $lte : new Date(dropoffTime), 
-      $gte : new Date(pickupTime)
-    },
-    pickupTime: {
-      $lte : new Date(dropoffTime), 
-      $gte : new Date(pickupTime)
-    },
-    pickup: {
-      $geoWithin: {
-        $polygon: JSON.parse(query.polygon)
+  var poly = JSON.parse(query.polygon);
+
+  if (poly.length > 2) {
+    Trip.find({
+      dropoffTime: {
+        $lte : new Date(dropoffTime), 
+        $gte : new Date(pickupTime)
+      },
+      pickupTime: {
+        $lte : new Date(dropoffTime), 
+        $gte : new Date(pickupTime)
+      },
+      pickup: {
+        $geoWithin: {
+          $polygon: poly
+        }
+      },
+      dropoff: {
+        $geoWithin: {
+          $polygon: poly
+        }
       }
-    },
-    dropoff: {
-      $geoWithin: {
-        $polygon: JSON.parse(query.polygon)
-      }
-    }
-  }, 
-    function(err, trips) {
-    if (err) { console.log(err)}
-    socket.emit('trip:data:begin', trips.length)
-    trips.forEach(function(trip) {
-      socket.emit('trip:data', trip);
+    }, 
+      function(err, trips) {
+      if (err) { console.log(err)}
+      socket.emit('trip:data:begin', trips.length)
+      trips.forEach(function(trip) {
+        socket.emit('trip:data', trip);
+      })
+      socket.emit('trip:data:finish')
     })
-    socket.emit('trip:data:finish')
-  })
-  .limit(25000);
-  stopTime = Date.now();
-  console.log((stopTime-startTime));
+    .limit(limit);
+  }
 }
 
 function getTrips(query, callback) {
@@ -91,8 +92,39 @@ function getTrips(query, callback) {
   .limit(pageSize);
 }
 
+function getShape(shapeName, callback) {
+  console.log(shapeName);
+  if (!shapeName) {
+    var blankShape = Shape({_id: 0});
+    return callback(null, blankShape);
+  }
+  Shape.findOne({name: shapeName}, function(err, shape){
+    if (err) return callback(err)
+    return callback(null, shape);
+   })
+}
+
+function saveShape(shapeName, shape, callback) {
+  shape = JSON.parse(shape);
+  // You may not autocomplete your poly
+  // ...but I will
+  if (shape[0] !== shape[shape.length]) {
+    shape.push(shape[0]);      
+  }
+
+  var newShape = new Shape({ 
+      name: shapeName, 
+      shape: { coordinates: [shape] }
+    });
+  newShape.save(function (err, shape) {
+    if (err) return console.error(err);
+  });
+}
+
 module.exports = {  
   getSocketTrips: logger.wrapFunction(getSocketTrips),
   getTrip: logger.wrapFunction(getTrip),
-  getTrips: logger.wrapFunction(getTrips)
+  getTrips: logger.wrapFunction(getTrips),
+  getShape: logger.wrapFunction(getShape),
+  saveShape: logger.wrapFunction(saveShape)
 };

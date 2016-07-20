@@ -77,6 +77,15 @@
     vm.testSocket = testSocket;
     vm.getSocketTrips = getSocketTrips;
 
+    // Shapes
+    vm.saveShape = saveShape;
+    vm.saveShapeName;
+    vm.loadShapeName;
+    // Query
+    vm.queryMin = 0;
+    vm.queryMax = 200;
+    vm.queryLimit = vm.queryMax;
+
     init();
 
     function init() {
@@ -290,7 +299,7 @@
 
     function filterTrips() {      
       var mongoPoly;
-      if (polyMarkers.length>0) {
+      if (polyMarkers.length>2) {
         mongoPoly = JSON.stringify(getMongoPoly());
       } else {
         mongoPoly = JSON.stringify([[-75,42],[-73,42],[-73,40],[-75,40]]);
@@ -354,6 +363,27 @@
       polyMarkers = [];
 
       if (vm.polygon) { vm.polygon.setMap(null); }
+    }
+
+    function saveShape() {
+      var mongoPoly;
+      if (polyMarkers.length>2) {
+        mongoPoly = JSON.stringify(getMongoPoly());
+      } else {
+        mongoPoly = JSON.stringify([[-75,42],[-73,42],[-73,40],[-75,40]]);
+      }
+
+      var shape = {
+        name: vm.saveShapeName,
+        poly: mongoPoly
+      }
+
+      console.log(shape);
+
+      HomeService.saveShape(shape)
+      .then(function(res) {
+          console.log(res);
+        });
     }
 
     function showAllMarkers() {
@@ -429,6 +459,7 @@
       }
 
       var query = {
+        limit: vm.queryLimit,
         pickupTime: vm.tripStart,
         dropoffTime: vm.tripEnd,
         polygon: mongoPoly
