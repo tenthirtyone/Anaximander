@@ -10,6 +10,7 @@
     var APIURL = '/api/trips';
 
     return {
+      loadShape: loadShape,
       getTrips: getTrips,
       saveShape: saveShape    
     };
@@ -35,6 +36,25 @@
         console.log('XHR Failed for getTrips.' + error.data);
       }
     }
+
+    function loadShape(shapeName) {
+      var query = {
+        shapename: shapeName
+      };
+      return $http.get('/api/shape', {params: query})
+        .then(loadShapeComplete)
+        .catch(loadShapeFailed);
+
+      function loadShapeComplete(response) {
+        console.log(response);
+        return response.data;
+      }
+
+      function loadShapeFailed(error) {
+        console.log('XHR Failed for loadShape.' + error.data);
+      }
+    }
+
     function saveShape(shape) {
       var path = '/api/shape'
       return $http.post(path, shape)

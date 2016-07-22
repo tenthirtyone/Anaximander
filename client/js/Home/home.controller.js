@@ -12,7 +12,9 @@
     vm.map = {};
     vm.mapMode = 'Marker';
     vm.drawMapMode = drawMapMode;
+    vm.resetMap = resetMap;
     vm.clearMap = clearMap;
+    vm.removeMarkers = removeMarkers;
     vm.drawingPoly = false;
     vm.mapOptions = {
       center: new google.maps.LatLng(40.39011437783109, -76.06624023437502),
@@ -78,13 +80,16 @@
     vm.getSocketTrips = getSocketTrips;
 
     // Shapes
+    vm.loadShape = loadShape;
     vm.saveShape = saveShape;
     vm.saveShapeName;
     vm.loadShapeName;
+
+
     // Query
     vm.queryMin = 0;
-    vm.queryMax = 200;
-    vm.queryLimit = vm.queryMax;
+    vm.queryMax = 20000;
+    vm.queryLimit = 200;
 
     init();
 
@@ -104,6 +109,8 @@
       filterTrips();
     }
 
+
+    // The extent of the map controller. Noted for when I refactor
     function addMapListeners() {
       google.maps.event.addListener(vm.map, "click", function(event) {
 
@@ -148,11 +155,17 @@
     function changeMapCenter(lat, lng) {
       vm.map.setCenter(new google.maps.LatLng(lat, lng));
     }
+    // Ambiguous as fuck but I'll fix when I refactor... heh
+    function resetMap() {
+      clearMap();
+      removePolygon();
+    }
 
     function clearMap() {
       removeHeatmap();
       removeCluster();
       removeMarkers();
+
     }
 
     function drawMapMode() {
@@ -180,13 +193,24 @@
 
       var polyCoords = [];
 
-      for (var i = 0; i < polyMarkers.length; i++) {
-        polyCoords.push({
-          lat: polyMarkers[i].position.lat(),
-          lng: polyMarkers[i].position.lng()
-        });
+      if (polyMarkers[0].position) {
+        console.log('Gmaps Data')
+        for (var i = 0; i < polyMarkers.length; i++) {
+          polyCoords.push({
+            lat: polyMarkers[i].position.lat(),
+            lng: polyMarkers[i].position.lng()
+          });
+        }
+      } else {
+       for (var i = 0; i < polyMarkers.length; i++) {
+        console.log('Mongo Data')
+         polyCoords.push({
+           lat: polyMarkers[i][1],
+           lng: polyMarkers[i][0]
+         });
+       }     
       }
-
+      console.log(polyCoords)
       vm.polygon = new google.maps.Polygon({
         paths: polyCoords,
         strokeColor: '#FF0000',
@@ -320,6 +344,46 @@
         polyCoords.push([polyMarkers[i].position.lng(), polyMarkers[i].position.lat()]);
       } 
       return polyCoords;
+    }
+
+    function drawShape() {
+      if (!vm.shape) { return; }
+
+
+
+      removePolygon();
+      console.log(vm.shape.coordinates)
+      for (var i=0; i<vm.shape.coordinates.length; i++) {
+        console.log('titties')
+        var tempMarker = new google.maps.Marker({
+          map: vm.map,
+          draggable: true,
+          animation: google.maps.Animation.DROP,
+          icon: polyMarkerIcon,
+          position: {
+            lat: vm.shape.coordinates[i][1],
+            lng: vm.shape.coordinates[i][0]
+          }
+        });
+        google.maps.event.addListener(tempMarker, 'dragend', function() {
+          drawPolygon();
+        });
+
+        polyMarkers.push(tempMarker);
+      }
+      
+      drawPolygon();
+    }
+
+    function loadShape() {
+      return HomeService.loadShape(vm.loadShapeName)
+      .then(function(res) {
+        vm.shape = res.shape;
+        vm.shape.coordinates = vm.shape.coordinates[0];
+        console.log(vm.shape);
+        drawShape()
+    
+      })
     }
 
     function getTrips(query) {
@@ -459,7 +523,7 @@
       }
 
       var query = {
-        limit: vm.queryLimit,
+        limit: vm.queryLimit < vm.queryMax ? vm.queryLimit : 20000,
         pickupTime: vm.tripStart,
         dropoffTime: vm.tripEnd,
         polygon: mongoPoly

@@ -92,8 +92,10 @@ function getTrips(query, callback) {
   .limit(pageSize);
 }
 
-function getShape(shapeName, callback) {
-  console.log(shapeName);
+function getShape(query, callback) {
+  console.log('######')
+  console.log(query)
+  var shapeName = query.shapename || null;
   if (!shapeName) {
     var blankShape = Shape({_id: 0});
     return callback(null, blankShape);

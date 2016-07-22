@@ -4,24 +4,44 @@
   <div class="row">
     <div class="panel-container">
       <div class="panel panel-default">
-        <div class="panel-heading" ng-click="home.showStatistics=!home.showStatistics">Search & Statistics 
+        <div class="panel-heading" ng-click="home.showStatistics=!home.showStatistics">
+          <span ng-show="!home.drawingMap">Search & Statistics</span>
+          <span ng-show="home.drawingMap">Map Draw in Progress</span>
         	<div class="pull-right">
             <input id="totalTrips" type="number" value="{{home.trips.length}}" disabled ng-show="home.showStatistics">
         		<i class="fa fa-chevron-down" aria-hidden="true"></i>
         	</div>
-          <br />          
+                  
       	</div>
         <div class="panel-body statistics" ng-show="home.showStatistics">
           <div class="col-xs-6 col-md-12">                    
-            <div ng-show="home.drawingMap">
-              Map Draw in Progress
+            <div >
+              
+            </div>
+            <div>
+            <form>
+              <div class="col-xs-4">
+                <label><input type="radio" name="searchType"> Contains</label>
+              </div>
+              <div class="col-xs-4">
+                <label><input type="radio" name="searchType"> Radius</label>
+              </div>
+              <div class="col-xs-4">
+                <label><input type="radio" name="searchType"> Intersects</label>
+              </div>
+            </form>
             </div>
             <div>
               <label for="maxResults">Max Results (20,000)</label>
               <input id="maxReults" type="number" ng-model="home.queryLimit" min="{{home.queryMin}}" max="{{home.queryMax}}">
             </div>
             <div>         
-              <button id="socketTrips" ng-click="home.getSocketTrips()">Search Trips</button>
+              <button id="socketTrips" ng-click="home.getSocketTrips()" title="Search">
+                <i class="fa fa-filter fa-3x fa-fw" aria-hidden="true"></i>
+              </button>
+              <button ng-click="home.resetMap()" title="Clear Map">
+                <i class="fa fa-trash fa-3x fa-fw" aria-hidden="true"></i>
+              </button>
             </div>
           </div>
           <div class="col-xs-6 col-md-12">
@@ -44,23 +64,22 @@
             <div>
               <label for="saveShape">Load Shape</label>
               <input type="text" placeholder="Shape Name" ng-model="home.loadShapeName"/>
-              <button>Search</button>
+              <button ng-click="home.loadShape()">Load</button>
             </div>
           </div>
           <h5>Geofence</h5>
+            <button ng-click="home.filterTrips()" title="Search">
+              <i class="fa fa-filter fa-3x fa-fw" aria-hidden="true"></i>
+            </button>
             <button ng-click="home.togglePolygon()" title="Add Geopoint on Click" ng-show="!home.drawingPoly">
             	<i class="fa fa-crosshairs fa-3x fa-fw" aria-hidden="true"></i>
             </button>
             <button ng-click="home.togglePolygon()" title="Pan on Click" ng-show="home.drawingPoly">
             	<i class="fa fa-hand-rock-o fa-3x fa-fw" aria-hidden="true"></i>
             </button>
-            <button ng-click="home.filterTrips()" title="Filter to Geofence coordinates">
-            	<i class="fa fa-filter fa-3x fa-fw" aria-hidden="true"></i>
-            </button>
             <button ng-click="home.undoPolygon()" title="Undo Geopoint">
             	<i class="fa fa-undo fa-3x fa-fw" aria-hidden="true"></i>
             </button>
-            <br />
             <button ng-click="home.removePolygon()" title="Remove Geofence">
             	<i class="fa fa-trash fa-3x fa-fw" aria-hidden="true"></i>
             </button>
@@ -74,6 +93,9 @@
             </button>
             <button ng-click="home.drawHeatmap()" title="Show Heatmap">
             	<i class="fa fa-fire fa-3x fa-fw" aria-hidden="true"></i>
+            </button>
+            <button ng-click="home.removeMarkers()" title="Remove Markers">
+              <i class="fa fa-trash fa-3x fa-fw" aria-hidden="true"></i>
             </button>
           </div>
         </div>

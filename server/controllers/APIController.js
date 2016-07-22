@@ -19,7 +19,8 @@ router.get("/trips", function(req, res) {
 });
 
 router.get("/shape", function(req, res) {
-  TripService.getShape(req.headers.shapename, function(err, shape) {
+  console.log(req.query)
+  TripService.getShape(req.query, function(err, shape) {
     if (err) res.status(400).send(err);
     res.send(shape);
   })
