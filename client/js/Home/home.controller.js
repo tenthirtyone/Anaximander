@@ -14,6 +14,8 @@
     vm.drawMapMode = drawMapMode;
     vm.resetMap = resetMap;
     vm.clearMap = clearMap;
+    vm.hidePolyMarkers = hidePolyMarkers;
+    vm.showPolyMarkers = showPolyMarkers;
     vm.removeMarkers = removeMarkers;
     vm.drawingPoly = false;
     vm.mapOptions = {
@@ -349,7 +351,7 @@
     function drawShape() {
       if (!vm.shape) { return; }
 
-
+      vm.shape.coordinates.pop();
 
       removePolygon();
       console.log(vm.shape.coordinates)
@@ -371,7 +373,7 @@
 
         polyMarkers.push(tempMarker);
       }
-      
+      changeMapCenter(vm.shape.coordinates[0][1], vm.shape.coordinates[0][0]);
       drawPolygon();
     }
 
@@ -397,6 +399,18 @@
 
     function toggleDropoffMarkers() {
       vm.showDropoffMarkers = !vm.showDropoffMarkers;
+    }
+
+    function hidePolyMarkers() {
+      for(var i in polyMarkers) {
+        polyMarkers[i].setVisible(false);
+      }
+    }
+
+    function showPolyMarkers() {
+      for(var i in polyMarkers) {
+        polyMarkers[i].setVisible(true);
+      }
     }
 
     function hideMarkers() {

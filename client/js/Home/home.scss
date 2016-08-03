@@ -17,7 +17,12 @@ container > row > col-xs-12 {
   right: 10px;
   max-width: 30%;
 }
-
+.presentation {
+  margin: 6px 0 6px 0;
+  input[type=checkbox] {
+    margin: 0px 6px 0px 6px;
+  }
+}
 .statistics {
   button {
     

@@ -55,6 +55,14 @@
         <div class="panel-body" ng-show="home.showControls">
           <div>
           <h5>Markers</h5>
+          <div class="presentation">
+            <button ng-click="home.hidePolyMarkers()" title="Hide PolyMarkers">
+              <i class="fa fa-eye-slash fa-3x fa-fw" aria-hidden="true"></i>
+            </button>            
+            <button ng-click="home.showPolyMarkers()" title="Show PolyMarkers">
+              <i class="fa fa-eye fa-3x fa-fw" aria-hidden="true"></i>
+            </button>            
+          </div>
           <div class="persistence">
             <div>
               <label for="saveShape">Save Shape</label>
