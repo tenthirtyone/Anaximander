@@ -16,7 +16,7 @@ var buildDir = './build/';
 
 var browser = os.platform() === 'linux' ? 'google-chrome' : (
 os.platform() === 'darwin' ? 'google chrome' : (
-os.platform() === 'win32' ? 'chrome' : 'firefox'));   
+os.platform() === 'win32' ? 'chrome' : 'firefox'));
 
 var htmlReplaceStrings = {
         'css': 'styles/styles.css',
@@ -34,7 +34,7 @@ var vendorFiles = [
   'bower_components/angular-ui-event/dist/event.js',
   'bower_components/ngstorage/ngStorage.js',
   'bower_components/angular-animate/angular-animate.js',
-  'bower_components/socket.io-client/socket.io.js',
+  'bower_components/socket.io-client/dist/socket.io.js',
   'bower_components/markerclustererplus/src/markerclusterer.js'
 ];
 
@@ -67,8 +67,8 @@ gulp.task('lint', function() {
 gulp.task('move', ['clean'], function() {
   gulp.src('client/favicon.png')
     .pipe(gulp.dest(buildDir));
-  
-  
+
+
  return gulp.src('client/index.html')
   .pipe(htmlreplace(htmlReplaceStrings))
   .pipe(gulp.dest(buildDir));
@@ -88,7 +88,7 @@ gulp.task('scripts', ['clean'], function(){
     'client/**/*.module.js',
     'client/**/*.services.js',
     'client/**/*.controllers.js',
-    'client/**/*.js' 
+    'client/**/*.js'
   ])
     .pipe(concat('scripts.js'))
     .pipe(plumber())
@@ -102,8 +102,8 @@ gulp.task('views', ['clean'], function(){
     .pipe(plumber())
     .pipe(rename({dirname: ''}))
     .pipe(gulp.dest(buildDir + 'views'))
-    .pipe(livereload());		
-    
+    .pipe(livereload());
+
 })
 
 gulp.task('vendor', ['clean'], function(){

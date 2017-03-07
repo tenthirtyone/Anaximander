@@ -1,4 +1,75 @@
 (function() {
+	'use strict';
+
+	angular.module('Anaximander.about', []);
+
+}());
+(function() {
+	'use strict';
+
+	angular.module('Anaximander.home', []);
+
+}());
+(function() {
+'use strict';
+
+angular.module('Anaximander.directives', []);
+
+}());
+(function() {
+  'use strict';
+    
+  angular.module('Anaximander', [
+    'Anaximander.directives',
+    'Anaximander.home',
+    'Anaximander.about',
+    'ui.map',
+    'ngStorage',
+    'ui.router'    
+  ]);
+      
+}());
+(function() {
+  'use strict';
+
+  angular.module('Anaximander.home')
+    .controller('AboutController', AboutController);
+
+  
+
+  function AboutController() {
+    var vm = this;
+   
+
+    return vm;
+  }
+}());
+(function() {
+  'use strict';
+  angular.module('Anaximander.about')
+    .run(appRun);
+
+  appRun.$inject = ['routerHelper'];
+
+  function appRun(routerHelper) {
+    routerHelper.configureStates(getStates());
+  }
+
+  function getStates() {
+    return [
+      {
+        state: 'about',
+        config: {
+          url: '/about',
+          templateUrl: 'views/about.template.html',
+          controller: 'AboutController',
+          controllerAs: 'about'  
+        }
+      }
+    ];
+  }
+}());
+(function() {
   'use strict';
 
   angular.module('Anaximander.home')
@@ -96,10 +167,11 @@
     init();
 
     function init() {
-      //I disagree with the ui-routers implementation of the map. At least,
+      //I disagree with the ui-routers implementation of the map. At least, 
       //in how they retrieve the map from the scope. They bundle ui router
       //as a directive. I think it should be a separate module and its own
-      //angular service. This is to circumvent an expensive listener.
+      //angular service. Instead of bootstrapping the map in the DOM, do it 
+      //in memory. This is to circumvent an expensive listener.
       $timeout(function() {
         vm.map = $scope.myMap;
         markerCluster = new MarkerClusterer(vm.map, markers);
@@ -128,7 +200,7 @@
           });
 
           google.maps.event.addListener(tempMarker, 'dragend', function() {
-
+            
             drawPolygon();
           });
 
@@ -180,7 +252,7 @@
           break;
         case 'Heat':
           drawHeatmap();
-          break;
+          break;  
       }
       vm.drawingMap = false;
     }
@@ -209,7 +281,7 @@
            lat: polyMarkers[i][1],
            lng: polyMarkers[i][0]
          });
-       }
+       }     
       }
       console.log(polyCoords)
       vm.polygon = new google.maps.Polygon({
@@ -232,7 +304,7 @@
 
       if (vm.trips.length === 0 || vm.trips === null) { return; }
 
-      var tempPoints = [];
+      var tempPoints = [];    
 
       changeMapCenter(vm.trips[0].pickup.coordinates[1], vm.trips[0].pickup.coordinates[0]);
       for (var i = 0; i < vm.trips.length; i++) {
@@ -243,13 +315,13 @@
         if (vm.showDropoffMarkers){
           tempPoints.push(new google.maps.LatLng(vm.trips[i].dropoff.coordinates[1], vm.trips[i].dropoff.coordinates[0]));
         }
-       }
-
+       } 
+      
       heatmap = new google.maps.visualization.HeatmapLayer({
         data: tempPoints,
         map: vm.map
       });
-
+      
     }
 
     function drawTripCluster() {
@@ -282,7 +354,7 @@
           icon: pickupMarkerIcon
         });
         markers.push(tempDropoffMarker);
-       }
+       } 
       }
       markerCluster.addMarkers(markers);
     }
@@ -291,7 +363,7 @@
       vm.mapMode = 'Marker';
       // Seems odd but this is good user feedback
       clearMap();
-
+      
       if (vm.trips.length === 0 || vm.trips === null) { return; }
 
       changeMapCenter(vm.trips[0].pickup.coordinates[1], vm.trips[0].pickup.coordinates[0]);
@@ -322,7 +394,7 @@
       }
     }
 
-    function filterTrips() {
+    function filterTrips() {      
       var mongoPoly;
       if (polyMarkers.length>2) {
         mongoPoly = JSON.stringify(getMongoPoly());
@@ -343,7 +415,7 @@
 
       for (var i = 0; i < polyMarkers.length; i++) {
         polyCoords.push([polyMarkers[i].position.lng(), polyMarkers[i].position.lat()]);
-      }
+      } 
       return polyCoords;
     }
 
@@ -383,7 +455,7 @@
         vm.shape.coordinates = vm.shape.coordinates[0];
         console.log(vm.shape);
         drawShape()
-
+    
       })
     }
 
@@ -527,7 +599,7 @@
       vm.trips = [];
 
       drawTripCluster();
-
+      
       var mongoPoly;
       if (polyMarkers.length>0) {
         mongoPoly = JSON.stringify(getMongoPoly());
@@ -575,4 +647,297 @@
 
     return vm;
   }
+}());
+(function() {
+  'use strict';
+  
+  angular.module('Anaximander.home')
+  .factory('HomeService', HomeService);
+  
+  HomeService.$inject = ['$http', '$state', '$timeout'];
+  
+  function HomeService($http, $state, $timeout) {
+    var APIURL = '/api/trips';
+
+    return {
+      loadShape: loadShape,
+      getTrips: getTrips,
+      saveShape: saveShape    
+    };
+
+    function getTrips(query) {
+      query = {
+        pageNumber: 1,
+        limit: 20000,
+        pickupTime: query.pickupTime,
+        dropoffTime: query.dropoffTime,
+        polygon: query.polygon
+      };
+      return $http.get(APIURL, {params: query})
+        .then(getTripsComplete)
+        .catch(getTripsFailed);
+
+      function getTripsComplete(response) {
+        console.log(response);
+        return response.data;
+      }
+
+      function getTripsFailed(error) {
+        console.log('XHR Failed for getTrips.' + error.data);
+      }
+    }
+
+    function loadShape(shapeName) {
+      var query = {
+        shapename: shapeName
+      };
+      return $http.get('/api/shape', {params: query})
+        .then(loadShapeComplete)
+        .catch(loadShapeFailed);
+
+      function loadShapeComplete(response) {
+        console.log(response);
+        return response.data;
+      }
+
+      function loadShapeFailed(error) {
+        console.log('XHR Failed for loadShape.' + error.data);
+      }
+    }
+
+    function saveShape(shape) {
+      var path = '/api/shape'
+      return $http.post(path, shape)
+        .then(saveShapeComplete)
+        .catch(saveShapeFailed);
+
+      function saveShapeComplete(response) {
+        console.log(response);
+        return response.data;
+      }
+
+      function saveShapeFailed(error) {
+        console.log('XHR Failed for saveShape.' + error.data);
+      }
+    }
+  }
+  
+}());
+(function() {
+  'use strict';
+  angular.module('Anaximander.home')
+    .run(appRun);
+
+  appRun.$inject = ['routerHelper'];
+
+  function appRun(routerHelper) {
+    routerHelper.configureStates(getStates());
+  }
+
+  function getStates() {
+    return [
+      {
+        state: 'home',
+        config: {
+          url: '/',
+          templateUrl: 'views/home.template.html',
+          controller: 'HomeController',
+          controllerAs: 'home'  
+        }
+      }
+    ];
+  }
+}());
+(function() {
+  "use strict";
+  
+  // Response Headers
+  angular.module('Anaximander')
+  .config(['$httpProvider', function($httpProvider) {
+    $httpProvider.defaults.headers.common = {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    };     
+  }]); 
+}());
+(function() {
+  // Modified version of John Papa's Router Helper
+  // https://github.com/johnpapa/angular-styleguide
+  
+  angular
+    .module('Anaximander')
+    .provider('routerHelper', routerHelperProvider);
+
+  routerHelperProvider.$inject = ['$locationProvider', '$stateProvider', '$urlRouterProvider'];
+
+  function routerHelperProvider($locationProvider, $stateProvider, $urlRouterProvider) {
+
+      this.$get = RouterHelper;
+
+      $locationProvider.html5Mode(false);
+
+      RouterHelper.$inject = ['$state'];
+
+      function RouterHelper($state) {
+          var service = {
+            configureStates: configureStates,
+            getStates: getStates
+          };
+
+          return service;
+
+          function configureStates(states, otherwisePath) {
+            states.forEach(function(state) {
+                $stateProvider.state(state.state, state.config);
+            });
+            $urlRouterProvider.otherwise("/");
+          }
+
+          function getStates() { return $state.get(); }
+      }
+  }
+}());
+(function() {
+'use strict';
+
+angular.module('Anaximander')
+.factory('socket', function ($rootScope) {
+  var socket = io.connect();
+  return {
+    on: function (eventName, callback) {
+      socket.on(eventName, function () {  
+        var args = arguments;
+        $rootScope.$apply(function () {
+          callback.apply(socket, args);
+        });
+      });
+    },
+    emit: function (eventName, data, callback) {
+      socket.emit(eventName, data, function () {
+        var args = arguments;
+        $rootScope.$apply(function () {
+          if (callback) {
+            callback.apply(socket, args);
+          }
+        });
+      })
+    }
+  };
+});
+}());
+(function() {
+  //Monitor response headers for a json web token. Automatically
+  //saves any auth tokens to local storage. Not used in this app
+  "use strict";
+  
+  angular.module('Anaximander')
+    .factory('tokenInterceptor', tokenInterceptor);
+       
+    tokenInterceptor.$inject = ['$localStorage'];
+  
+    function tokenInterceptor($localStorage) {  
+      return {
+          request: function(config) {
+              if (!config.headers.Authorization){
+                config.headers.Authorization = $localStorage.token || '';
+              }
+              return config;
+          },
+          response: function(response) {
+            if(response.headers('Authorization')) {
+              $localStorage.token = response.headers('Authorization');
+            }
+            return response;
+          }
+      };
+  }
+  
+  angular.module('Anaximander')
+    .config(['$httpProvider', function($httpProvider) {  
+      $httpProvider.interceptors.push('tokenInterceptor');
+  }]);
+}());
+(function() {
+  'use strict';
+  
+  angular
+    .module('Anaximander.directives')
+    .directive('footer', footer);
+
+  function footer() {
+    var directive = {
+      restrict: 'EA',
+      templateUrl: 'views/footer.template.html',
+      scope: {
+          footerdata: '='
+      },
+      controller: DirectiveController,
+      controllerAs: 'vm',
+      bindToController: true
+    };
+
+    return directive;
+  }
+
+  function DirectiveController() {
+    var vm = this;
+    
+  }
+  
+}());
+(function() {
+  'use strict';
+  
+  angular
+    .module('Anaximander.directives')
+    .directive('header', header);
+
+  function header() {
+    var directive = {
+      restrict: 'EA',
+      templateUrl: 'views/header.template.html',
+      scope: {
+          headerdata: '='
+      },
+      controller: DirectiveController,
+      controllerAs: 'vm',
+      bindToController: true
+    };
+
+    return directive;
+  }
+
+  function DirectiveController() {
+    var vm = this;
+    
+  }
+  
+}());
+(function() {
+  'use strict';
+  
+  angular
+    .module('Anaximander.directives')
+    .directive('navbar', navbar);
+
+  function navbar() {
+    var directive = {
+      restrict: 'EA',
+      templateUrl: 'views/navbar.template.html',
+      scope: {
+          navbardata: '='
+      },
+      controller: DirectiveController,
+      controllerAs: 'vm',
+      bindToController: true
+    };
+
+    return directive;
+  }
+
+  function DirectiveController() {
+    var vm = this;
+    
+  }
+  
 }());
